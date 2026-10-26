@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Formación en ciberseguridad defensiva, hacking ético y desarrollo seguro.">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https://images.unsplash.com data:; style-src 'self' https://fonts.googleapis.com https://cdnjs.cloudflare.com 'unsafe-inline'; font-src https://fonts.gstatic.com https://cdnjs.cloudflare.com; script-src 'self' https://cdnjs.cloudflare.com; frame-src https://www.youtube-nocookie.com;">
+<title>Suid Academy | Ciberseguridad y desarrollo seguro</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#cursos">Saltar al contenido</a>
+
+<div class="notice" role="note">
+  <i class="fa-solid fa-scale-balanced" aria-hidden="true"></i>
+  Contenido exclusivamente educativo y defensivo. Practica solo en laboratorios propios o con autorización escrita.
+  <a href="legal.html#disclaimer">Leer descargo</a>
+</div>
+
+<header class="navbar">
+  <div class="nav-container">
+    <a class="logo" href="index.html"><img src="assets/logo-mark.png" class="logo-icon" alt="" width="28" height="28"> Suid Academy</a>
+    <div class="search-bar">
+      <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+      <input type="search" id="searchInput" placeholder="Buscar cursos o instructores" aria-label="Buscar cursos">
+    </div>
+    <nav class="nav-links" aria-label="Principal">
+      <a href="#cursos" class="active">Cursos</a>
+      <a href="#certificaciones">Certificados</a>
+      <a href="legal.html">Legal</a>
+      <button class="btn-ghost" id="toggleVsCodeGuide" aria-expanded="false" aria-controls="vscodeGuide">Guía VS Code</button>
+      <a href="admin.html" id="dashLink" class="btn-ghost hidden">Mi panel</a>
+      <span class="who" id="whoami"></span>
+      <button class="btn-ghost" id="logoutBtn">Salir</button>
+    </nav>
+  </div>
+</header>
+
+<section class="vscode-guide-panel hidden" id="vscodeGuide">
+  <div class="guide-container">
+    <div class="guide-header">
+      <h2>Ejecutar Suid Academy en Visual Studio Code</h2>
+      <button class="icon-btn" id="closeVsCodeGuide" aria-label="Cerrar guía"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <ol class="steps-grid">
+      <li><h3>Abre la carpeta</h3><p>Abre la carpeta <code>suid-academy</code> en VS Code (Archivo → Abrir carpeta).</p></li>
+      <li><h3>Instala Live Server</h3><p>Extensiones (<code>Ctrl+Shift+X</code>) → <strong>Live Server</strong> de Ritwick Dey.</p></li>
+      <li><h3>Ejecuta</h3><p>Clic derecho en <code>index.html</code> → <strong>Open with Live Server</strong>.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>Aprende ciberseguridad defensiva con práctica real</h1>
+    <p>Hacking ético, pentesting autorizado y desarrollo seguro. Laboratorios aislados, instructores con certificaciones vigentes y certificados verificables.</p>
+    <ul class="trust-row" aria-label="Garantías de la plataforma">
+      <li><i class="fa-solid fa-lock" aria-hidden="true"></i> Conexión cifrada (HTTPS)</li>
+      <li><i class="fa-solid fa-bug" aria-hidden="true"></i> Contenido alineado a OWASP</li>
+      <li><i class="fa-solid fa-flask" aria-hidden="true"></i> Laboratorios aislados</li>
+      <li><i class="fa-solid fa-user-shield" aria-hidden="true"></i> Datos protegidos (Ley 787)</li>
+    </ul>
+  </div>
+</section>
+
+<main class="main-container" id="cursos">
+  <div class="filters-section">
+    <div class="categories" role="group" aria-label="Categorías">
+      <button class="cat-btn active" data-cat="all">Todos</button>
+      <button class="cat-btn" data-cat="hacking">Hacking ético</button>
+      <button class="cat-btn" data-cat="pentesting">Pentesting</button>
+      <button class="cat-btn" data-cat="programacion">Programación</button>
+      <button class="cat-btn" data-cat="devsecops">DevSecOps</button>
+    </div>
+    <div class="level-select">
+      <label for="levelFilter">Nivel</label>
+      <select id="levelFilter">
+        <option value="all">Todos</option>
+        <option value="Principiante">Principiante</option>
+        <option value="Intermedio">Intermedio</option>
+        <option value="Avanzado">Avanzado</option>
+      </select>
+    </div>
+  </div>
+  <div class="courses-grid" id="coursesGrid"></div>
+
+  <section class="cert-section" id="certificaciones">
+    <div>
+      <h2>Certificados verificables</h2>
+      <p>Cada certificado incluye un código único y un QR para que empleadores e instituciones comprueben su autenticidad. Se emite al completar el 100% de las lecciones.</p>
+    </div>
+    <ul>
+      <li><i class="fa-solid fa-qrcode" aria-hidden="true"></i> Código QR de verificación</li>
+      <li><i class="fa-solid fa-fingerprint" aria-hidden="true"></i> Huella SHA-256 del documento</li>
+      <li><i class="fa-solid fa-file-pdf" aria-hidden="true"></i> Descarga e impresión en PDF</li>
+    </ul>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <strong>Suid Academy</strong>
+      <p>Formación en ciberseguridad con fines educativos y defensivos.</p>
+      <p>Contacto: <a href="mailto:contacto@suid.academy">contacto@suid.academy</a></p>
+    </div>
+    <nav aria-label="Legal">
+      <strong>Legal</strong>
+      <a href="legal.html#disclaimer">Descargo de hacking ético</a>
+      <a href="legal.html#terminos">Términos de uso</a>
+      <a href="legal.html#privacidad">Política de privacidad</a>
+      <a href="legal.html#consumidor">Derechos del consumidor</a>
+    </nav>
+    <div>
+      <strong>Marco normativo</strong>
+      <p>Ley 842 (consumidores), Ley 787 (datos personales), Ley 1042 y sus reformas (ciberdelitos).</p>
+    </div>
+  </div>
+  <p class="copy">© 2026 Suid Academy. Todos los derechos reservados. Razón social y RUC: <em>completar</em>.</p>
+</footer>
+
+<div class="modal-overlay hidden" id="courseModal" role="dialog" aria-modal="true" aria-labelledby="currentLessonTitle">
+  <div class="modal-container">
+    <button class="modal-close" id="closeModal" aria-label="Cerrar curso"><i class="fa-solid fa-xmark"></i></button>
+    <div class="classroom-layout">
+      <div class="video-main">
+        <div class="tab-bar" role="tablist" aria-label="Secciones de la lección">
+          <button class="tab-btn active" data-tab="clase" role="tab">Clase</button>
+          <button class="tab-btn" data-tab="lab" role="tab"><i class="fa-solid fa-flask" aria-hidden="true"></i> Laboratorio</button>
+          <button class="tab-btn" data-tab="ia" role="tab"><i class="fa-solid fa-robot" aria-hidden="true"></i> Asistente IA</button>
+        </div>
+
+        <div class="tab-panel" id="panel-clase">
+          <div class="video-wrapper"><iframe id="videoPlayer" src="" title="Video de la lección" allowfullscreen referrerpolicy="no-referrer"></iframe></div>
+          <div class="video-details">
+            <h2 id="currentLessonTitle">Cargando lección</h2>
+            <p class="instructor">Docente: <strong id="instructorName"></strong></p>
+            <p id="lessonDescription"></p>
+            <p class="lab-warn"><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i> Aplica estas técnicas solo en tu laboratorio o con autorización escrita. <a href="legal.html#disclaimer">Descargo</a></p>
+            <div class="lesson-actions">
+              <button class="btn-complete" id="markCompleteBtn">Marcar como completada</button>
+              <button class="btn-cert hidden" id="getCertBtn"><i class="fa-solid fa-certificate" aria-hidden="true"></i> Obtener certificado</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-panel hidden" id="panel-lab">
+          <p class="lab-warn"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> Laboratorio simulado de demostración: no es una máquina virtual real, solo texto predefinido. Ver nota técnica en <code>courses-data.js</code>.</p>
+          <div id="labIntro">
+            <p id="labBrief" class="muted-note"></p>
+            <button class="btn-primary" id="startLabBtn">Iniciar laboratorio simulado</button>
+          </div>
+          <div id="labConsole" class="hidden">
+            <p class="lab-machine" id="labMachineInfo"></p>
+            <div class="lab-output" id="labOutput"></div>
+            <input type="text" id="labCmd" class="lab-input" placeholder="Escribe un comando y pulsa Enter (prueba: help)" autocomplete="off">
+          </div>
+        </div>
+
+        <div class="tab-panel hidden" id="panel-ia">
+          <p class="lab-warn"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> Asistente simulado con respuestas predefinidas, no un modelo de IA real. Ver nota técnica en <code>courses-data.js</code>.</p>
+          <div class="chat-log" id="chatLog"></div>
+          <div class="chat-row">
+            <input type="text" id="chatInput" class="lab-input" placeholder="Escribe tu duda sobre el curso…" autocomplete="off">
+            <button class="btn-primary" id="chatSend">Enviar</button>
+          </div>
+        </div>
+      </div>
+      <aside class="course-sidebar">
+        <div class="sidebar-header">
+          <h3 id="modalCourseTitle"></h3>
+          <div class="progress-label"><span>Progreso</span><span id="progressPercent">0%</span></div>
+          <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+        </div>
+        <div class="lessons-list" id="lessonsList"></div>
+      </aside>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay hidden" id="certModal" role="dialog" aria-modal="true" aria-labelledby="certTitle">
+  <div class="cert-card">
+    <button class="modal-close" id="closeCertModal" aria-label="Cerrar certificado"><i class="fa-solid fa-xmark"></i></button>
+    <div class="cert-border" id="certPrint">
+      <i class="fa-solid fa-shield-halved cert-icon" aria-hidden="true"></i>
+      <h2 id="certTitle">Certificado de finalización</h2>
+      <p>Suid Academy certifica que</p>
+      <h1 id="certStudentName">Estudiante</h1>
+      <p>completó satisfactoriamente el curso</p>
+      <h3 id="certCourseTitle"></h3>
+      <p class="cert-date" id="certDate"></p>
+      <div class="cert-verify">
+        <div id="certQR" aria-label="Código QR de verificación"></div>
+        <div>
+          <small>Código de verificación</small>
+          <code id="certCode"></code>
+          <small>Huella SHA-256</small>
+          <code id="certHash"></code>
+        </div>
+      </div>
+      <div class="cert-footer">
+        <div><span class="sig-line"></span><p id="certInstructor">Instructor</p></div>
+        <div><span class="sig-line"></span><p>Dirección Académica</p></div>
+      </div>
+    </div>
+    <button class="btn-primary print-btn" id="printCert"><i class="fa-solid fa-print" aria-hidden="true"></i> Imprimir / Guardar PDF</button>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="auth.js"></script>
+<script src="courses-data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

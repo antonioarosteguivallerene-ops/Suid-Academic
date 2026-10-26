@@ -1,0 +1,12 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Abrir Suid Academy (Live Server)",
+      "url": "http://127.0.0.1:5500/login.html",
+      "webRoot": "${workspaceFolder}"
+    }
+  ]
+}

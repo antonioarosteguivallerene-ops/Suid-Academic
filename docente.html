@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panel de docente | Suid Academy</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https://images.unsplash.com data:; style-src 'self' https://fonts.googleapis.com https://cdnjs.cloudflare.com 'unsafe-inline'; font-src https://fonts.gstatic.com https://cdnjs.cloudflare.com; script-src 'self' https://cdnjs.cloudflare.com;">
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="navbar"><div class="nav-container">
+  <a class="logo" href="index.html"><img src="assets/logo-mark.png" class="logo-icon" alt="" width="28" height="28"> Suid Academy</a>
+  <nav class="nav-links">
+    <a href="index.html">Ver cursos</a>
+    <span class="who" id="whoami"></span>
+    <button class="btn-ghost" id="logoutBtn">Cerrar sesión</button>
+  </nav>
+</div></header>
+
+<main class="dash">
+  <p class="draft">Panel de ejemplo con progreso simulado. El progreso real de los estudiantes debe calcularse en un backend, no leerse del navegador de cada quien.</p>
+  <h1>Mis cursos</h1>
+
+  <section class="dash-panel">
+    <div class="dash-panel-head"><h2>Cursos asignados</h2></div>
+    <table class="data-table" id="myCoursesTable">
+      <thead><tr><th>Curso</th><th>Nivel</th><th>Lecciones</th><th>Estudiantes</th><th>Progreso promedio</th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <section class="dash-panel">
+    <div class="dash-panel-head"><h2>Preguntas recientes al asistente IA</h2></div>
+    <p class="muted-note">Las preguntas que el asistente de cada curso no logra responder bien deberían llegar aquí para que el docente las revise y mejore la base de conocimiento. Esto todavía no está conectado a un backend.</p>
+    <ul class="faq-queue">
+      <li><strong>Pentesting web avanzado:</strong> "¿puedo probar esto contra la página de mi trabajo?"</li>
+      <li><strong>Python para pentesters:</strong> "¿por qué mi escáner de puertos se congela?"</li>
+    </ul>
+  </section>
+</main>
+
+<script src="auth.js"></script>
+<script src="courses-data.js"></script>
+<script src="docente.js"></script>
+</body>
+</html>
